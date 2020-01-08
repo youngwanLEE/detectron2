@@ -3,7 +3,7 @@
 
 Youngwan Lee and Jongyoul Park
 
-[[`CenterMask(code)`]](https://github.com/youngwanLEE/CenterMask) [[`VoVNet-v1(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`VoVNet-v2(arxiv)`]](https://arxiv.org/abs/1903.12174) [[`BibTeX`](#CitingVoVNet)]
+[[`CenterMask(code)`](https://github.com/youngwanLEE/CenterMask)] [[`VoVNet-v1(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`VoVNet-v2(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`BibTeX`](#CitingVoVNet)]
 
 
 <div align="center">
@@ -20,7 +20,16 @@ Compared to ResNe(X)t backbone
 - ***Efficient*** : Faster speed
 - ***Accurate*** : Better performance, especially *small* object.
 
+
 ## Training
+
+#### ImageNet Pretrained Models
+
+We provide backbone weights pretrained on ImageNet-1k dataset.
+* [VoVNetV2-39](https://dl.dropbox.com/s/q98pypf96rhtd8y/vovnet39_ese_detectron2.pth)
+* [VoVNetV2-57](https://dl.dropbox.com/s/8xl0cb3jj51f45a/vovnet57_ese_detectron2.pth)
+* [VoVNetV2-99](https://dl.dropbox.com/s/1mlv31coewx8trd/vovnet99_ese_detectron2.pth)
+
 
 To train a model, run
 ```bash
@@ -44,7 +53,7 @@ python /path/to/detectron2/projects/VoVNet/train_net.py --config-file projects/V
 ## Results on MS-COCO in Detectron2
 
 ### Note
-
+We simply replace ResNe(X)t with VoVNetV2 in the Faster/Mask R-CNN, following the same hyper-parameters.\
 We measure the inference time of all models with batch size 1 on the same V100 GPU machine.
 
 - pytorch1.3.1
