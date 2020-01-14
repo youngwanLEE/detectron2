@@ -26,6 +26,7 @@ Compared to ResNe(X)t backbone
 #### ImageNet Pretrained Models
 
 We provide backbone weights pretrained on ImageNet-1k dataset.
+* [VoVNetV2-19](https://dl.dropbox.com/s/rptgw6stppbiw1u/vovnet19_ese_detectron2.pth)
 * [VoVNetV2-39](https://dl.dropbox.com/s/q98pypf96rhtd8y/vovnet39_ese_detectron2.pth)
 * [VoVNetV2-57](https://dl.dropbox.com/s/8xl0cb3jj51f45a/vovnet57_ese_detectron2.pth)
 * [VoVNetV2-99](https://dl.dropbox.com/s/1mlv31coewx8trd/vovnet99_ese_detectron2.pth)
@@ -69,6 +70,8 @@ python /path/to/detectron2/projects/VoVNet/train_net.py --config-file projects/V
 
 |Backbone|lr sched|inference time|AP|APs|APm|APl|download|
 |:--------:|:---:|:--:|--|----|----|---|--------|
+|V2-19-FPN|3x|0.040|38.9|24.9|41.5|48.8|<a href="https://www.dropbox.com/s/1rfvi6vzx45z6y5/faster_V_19_eSE_ms_3x.pth?dl=1">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/dq7406vo22wjxgi/faster_V_19_eSE_ms_3x_metrics.json">metrics</a>
+||
 |R-50-FPN|3x|0.047|40.2|24.2|43.5|52.0|<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl">model</a>&nbsp;\|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/metrics.json">metrics</a>
 |V2-39-FPN|3x|0.047|42.7|27.1|45.6|54.0|<a href="https://dl.dropbox.com/s/dkto39ececze6l4/faster_V_39_eSE_ms_3x.pth">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/dx9qz1dn65ccrwd/faster_V_39_eSE_ms_3x_metrics.json">metrics</a>
 ||
@@ -82,6 +85,8 @@ python /path/to/detectron2/projects/VoVNet/train_net.py --config-file projects/V
 
 |Backbone|lr sched|inference time|box AP|box APs|box APm|box APl|mask AP|mask APs|mask APm|mask APl|download|
 |:--------:|:--------:|:--:|--|----|----|---|--|----|----|---|--------|
+|V2-19-FPN|3x|0.044|40.1|25.4|43.0|51.0|36.6|19.7|38.7|51.2|<a href="https://www.dropbox.com/s/dyeyuag5va96tqo/mask_V_19_eSE_ms_3x.pth?dl=1">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/0y0q97gi8u8kq2n/mask_V_19_eSE_ms_3x_metrics.json">metrics</a>
+||
 |R-50-FPN|3x|0.055|41.0|24.9|43.9|53.3|37.2|18.6|39.5|53.3|<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl">model</a>&nbsp;\|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/metrics.json">metrics</a>
 |V2-39-FPN|3x|0.052|43.8|27.6|47.2|55.3|39.3|21.4|41.8|54.6|<a href="https://dl.dropbox.com/s/c5o3yr6lwrb1170/mask_V_39_eSE_ms_3x.pth">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/21xqlv1ofn7oa1z/mask_V_39_eSE_metrics.json">metrics</a>
 ||
@@ -92,9 +97,65 @@ python /path/to/detectron2/projects/VoVNet/train_net.py --config-file projects/V
 |V2-99-FPN|3x|0.076|44.9|28.5|48.1|57.7|40.3|21.7|42.8|56.6|<a href="https://dl.dropbox.com/s/qx45cnv718k4zmn/mask_V_99_eSE_ms_3x.pth">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/u1sav8deha47odp/mask_V_99_eSE_metrics.json">metrics</a>|
 
 
+### Panoptic-FPN on COCO
+<!--
+./gen_html_table.py --config 'COCO-PanopticSegmentation/*50*' 'COCO-PanopticSegmentation/*101*'  --name R50-FPN R50-FPN R101-FPN --fields lr_sched train_speed inference_speed mem box_AP mask_AP PQ
+-->
+
+
+<table><tbody>
+<!-- START TABLE -->
+<!-- TABLE HEADER -->
+<th valign="bottom">Name</th>
+<th valign="bottom">lr<br/>sched</th>
+<th valign="bottom">inference<br/>time<br/>(s/im)</th>
+<th valign="bottom">box<br/>AP</th>
+<th valign="bottom">mask<br/>AP</th>
+<th valign="bottom">PQ</th>
+<th valign="bottom">download</th>
+<!-- TABLE BODY -->
+<!-- ROW: panoptic_fpn_R_50_3x -->
+<tr><td align="left">R-50-FPN</td>
+<td align="center">3x</td>
+<td align="center">0.063</td>
+<td align="center">40.0</td>
+<td align="center">36.5</td>
+<td align="center">41.5</td>
+<td align="center"><a href="https://dl.fbaipublicfiles.com/detectron2/COCO-PanopticSegmentation/panoptic_fpn_R_50_3x/139514569/model_final_c10459.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-PanopticSegmentation/panoptic_fpn_R_50_3x/139514569/metrics.json">metrics</a></td>
+</tr>
+<!-- ROW: panoptic_fpn_V_39_3x -->
+<tr><td align="left">V2-39-FPN</td>
+<td align="center">3x</td>
+<td align="center">0.063</td>
+<td align="center">42.8</td>
+<td align="center">38.5</td>
+<td align="center">43.4</td>
+<td align="center"><a href="https://www.dropbox.com/s/fnr9r4arv0cbfbf/panoptic_V_39_eSE_3x.pth?dl=1">model</a>&nbsp;|&nbsp;<a href="https://dl.dropbox.com/s/vftfukrjuu7w1ao/panoptic_V_39_eSE_3x_metrics.json">metrics</a></td>
+</tr>
+<!-- ROW: panoptic_fpn_R_101_3x -->
+<tr><td align="left">R-101-FPN</td>
+<td align="center">3x</td>
+<td align="center">0.078</td>
+<td align="center">42.4</td>
+<td align="center">38.5</td>
+<td align="center">43.0</td>
+<td align="center"><a href="https://dl.fbaipublicfiles.com/detectron2/COCO-PanopticSegmentation/panoptic_fpn_R_101_3x/139514519/model_final_cafdb1.pkl">model</a>&nbsp;|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-PanopticSegmentation/panoptic_fpn_R_101_3x/139514519/metrics.json">metrics</a></td>
+</tr>
+<!-- ROW: panoptic_fpn_V_57_3x -->
+ <tr><td align="left">V2-57-FPN</td>
+<td align="center">3x</td>
+<td align="center">0.070</td>
+<td align="center">43.4</td>
+<td align="center">39.2</td>
+<td align="center">44.3</td>
+<td align="center"><a href="https://www.dropbox.com/s/zhoqx5rvc0jj0oa/panoptic_V_57_eSE_3x.pth?dl=1">model</a>&nbsp;|&nbsp;<a href="https://dl.dropbox.com/s/20hwrmru15dilre/panoptic_V_57_eSE_3x_metrics.json">metrics</a></td>
+</tr>
+</tbody></table>
+
+
 ## TODO
- - [ ] Adding Lightweight models
- - [ ] Applying VoVNet for Panoptic FPN or other meta-architectures
+ - [x] Adding Lightweight models
+ - [x] Applying VoVNet for Panoptic FPN or other meta-architectures
 
 
 
