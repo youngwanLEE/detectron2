@@ -3,7 +3,7 @@
 
 Youngwan Lee and Jongyoul Park
 
-[[`CenterMask(code)`]](https://github.com/youngwanLEE/CenterMask) [[`VoVNet-v1(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`VoVNet-v2(arxiv)`]](https://arxiv.org/abs/1903.12174) [[`BibTeX`](#CitingVoVNet)]
+[[`CenterMask(code)`](https://github.com/youngwanLEE/CenterMask)] [[`VoVNet-v1(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`VoVNet-v2(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`BibTeX`](#CitingVoVNet)]
 
 
 <div align="center">
@@ -20,7 +20,16 @@ Compared to ResNe(X)t backbone
 - ***Efficient*** : Faster speed
 - ***Accurate*** : Better performance, especially *small* object.
 
+
 ## Training
+
+#### ImageNet Pretrained Models
+
+We provide backbone weights pretrained on ImageNet-1k dataset.
+* [VoVNetV2-39](https://dl.dropbox.com/s/q98pypf96rhtd8y/vovnet39_ese_detectron2.pth)
+* [VoVNetV2-57](https://dl.dropbox.com/s/8xl0cb3jj51f45a/vovnet57_ese_detectron2.pth)
+* [VoVNetV2-99](https://dl.dropbox.com/s/1mlv31coewx8trd/vovnet99_ese_detectron2.pth)
+
 
 To train a model, run
 ```bash
@@ -44,7 +53,7 @@ python /path/to/detectron2/projects/VoVNet/train_net.py --config-file projects/V
 ## Results on MS-COCO in Detectron2
 
 ### Note
-
+We simply replace ResNe(X)t with VoVNetV2 in the Faster/Mask R-CNN, following the same hyper-parameters.\
 We measure the inference time of all models with batch size 1 on the same V100 GPU machine.
 
 - pytorch1.3.1
@@ -77,7 +86,7 @@ python /path/to/detectron2/projects/VoVNet/train_net.py --config-file projects/V
 |V2-39-FPN|3x|0.052|43.8|27.6|47.2|55.3|39.3|21.4|41.8|54.6|<a href="https://dl.dropbox.com/s/c5o3yr6lwrb1170/mask_V_39_eSE_ms_3x.pth">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/21xqlv1ofn7oa1z/mask_V_39_eSE_metrics.json">metrics</a>
 ||
 |R-101-FPN|3x|0.070|42.9|26.4|46.6|56.1|38.6|19.5|41.3|55.3|<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x/138205316/model_final_a3ec72.pkl">model</a>&nbsp;\|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x/138205316/metrics.json">metrics</a>
-|V2-57-FPN|3x|0.058|43.8|27.3|47.1|55.8|39.3|21.0|41.9|55.8|<a href="https://dl.dropbox.com/s/aturknfroupyw92/mask_V_57_eSE_ms_3x.pth">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/8sdek6hkepcu7na/mask_V_57_eSE_metrics.json">metrics</a>
+|V2-57-FPN|3x|0.058|44.2|28.2|47.2|56.8|39.7|21.6|42.2|55.6|<a href="https://dl.dropbox.com/s/aturknfroupyw92/mask_V_57_eSE_ms_3x.pth">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/8sdek6hkepcu7na/mask_V_57_eSE_metrics.json">metrics</a>
 ||
 |X-101-FPN|3x|0.129|44.3|27.5|47.6|56.7|39.5|20.7|42.0|56.5|<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x/139653917/model_final_2d9806.pkl">model</a>&nbsp;\|&nbsp;<a href="https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x/139653917/metrics.json">metrics</a>|
 |V2-99-FPN|3x|0.076|44.9|28.5|48.1|57.7|40.3|21.7|42.8|56.6|<a href="https://dl.dropbox.com/s/qx45cnv718k4zmn/mask_V_99_eSE_ms_3x.pth">model</a>&nbsp;\|&nbsp;<a href="https://dl.dropbox.com/s/u1sav8deha47odp/mask_V_99_eSE_metrics.json">metrics</a>|
