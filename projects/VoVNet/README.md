@@ -1,3 +1,6 @@
+**Use this instead : https://github.com/youngwanLEE/vovnet-detectron2**
+
+
 # [VoVNet-v2](https://github.com/youngwanLEE/CenterMask) backbone networks in Detectron2
 **Efficient Backbone Network for Object Detection and Segmentation**
 
