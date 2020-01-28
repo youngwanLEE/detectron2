@@ -163,7 +163,7 @@ python /path/to/detectron2/projects/VoVNet/train_net.py --config-file projects/V
 
 If you use VoVNet, please use the following BibTeX entry.
 
-```
+```BibTeX
 @inproceedings{lee2019energy,
   title = {An Energy and GPU-Computation Efficient Backbone Network for Real-Time Object Detection},
   author = {Lee, Youngwan and Hwang, Joong-won and Lee, Sangrok and Bae, Yuseok and Park, Jongyoul},
