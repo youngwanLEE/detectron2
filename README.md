@@ -3,7 +3,7 @@
 
 Youngwan Lee and Jongyoul Park
 
-[[`CenterMask(code)`](https://github.com/youngwanLEE/CenterMask)] [[`VoVNet-v1(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`VoVNet-v2(arxiv)`](https://arxiv.org/abs/1903.12174)] [[`BibTeX`](#CitingVoVNet)]
+[[`CenterMask(code)`](https://github.com/youngwanLEE/CenterMask)] [[`VoVNet-v1(arxiv)`](https://arxiv.org/abs/1904.09730)] [[`VoVNet-v2(arxiv)`](https://arxiv.org/abs/1911.06667)] [[`BibTeX`](#CitingVoVNet)]
 
 
 <div align="center">
